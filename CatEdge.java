@@ -1,5 +1,5 @@
-import edu.princeton.cs.algs4.Edge;
-public class CatEdge extends Edge{
+import edu.princeton.cs.algs4.DirectedEdge;
+public class CatEdge extends DirectedEdge{
 	private double weight;
 	public CatEdge(int v, int w, double weight){
 		super(v, w, weight);
