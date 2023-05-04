@@ -91,12 +91,18 @@ public class CatGame{
       al.add(i - 1);
     if((i + 1)%n != 0) // right
       al.add(i + 1);
-    if(i < n*(n - 1)){
-      al.add(i + n); // upper left/right
-      if((i/n) % 2 == 0 && (i + 1)%n != 0) // 
-        al.add(i + n - 1);
-      else if((i/n) % 2 != 0 && (i%n != 0))
-        al.add(i + n + 1);
+    if(i/n != n - 1){ // lower left/right
+      al.add(i + n);
+      // if on an even row (starting from 0) + not the left edge, add lower left
+      if((i/n)%2 == 0){
+        if(i%n != 0)
+          al.add(i + n - 1);
+      }
+      // if on an odd row (staring from 0) + not on the right edge, add lower right
+      else{
+        if((i + 1)%n != 0)
+          al.add(i + n + 1);
+      }
     }
     return al;
   }
